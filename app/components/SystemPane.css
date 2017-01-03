@@ -1,0 +1,24 @@
+.systemPane {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.list > span {
+  font-weight: bold;
+}
+
+.list ul,
+.list ol {
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.channel::before {
+  content: '#';
+  color: lightgray;
+  display: block;
+  position: absolute;
+  left: 0;
+}

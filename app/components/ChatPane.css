@@ -1,0 +1,21 @@
+.chatPane {
+  height: 100%;
+  width: 100%;
+}
+
+.messages ul,
+.messages ol {
+
+}
+
+.messages li {
+  display: flex;
+}
+
+.user {
+  flex: 1 1 0;
+}
+
+.message {
+  flex: 4 4 0;
+}
