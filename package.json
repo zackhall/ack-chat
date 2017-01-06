@@ -159,6 +159,7 @@
   "dependencies": {
     "electron-debug": "^1.1.0",
     "font-awesome": "^4.7.0",
+    "irc": "^0.5.2",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-redux": "^5.0.1",
