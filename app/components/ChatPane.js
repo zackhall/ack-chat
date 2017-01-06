@@ -17,7 +17,7 @@ export default class ChatPane extends Component {
     const messages = this.state.messages.map(message => (
       <li>
         <div className={styles.user}>{message.from}</div>
-        <div className={styles.message}>{message.message}</div>
+        <div className={styles.message}>{message.body}</div>
       </li>
     ));
 
@@ -33,13 +33,15 @@ export default class ChatPane extends Component {
   }
 
   componentDidMount() {
-    this.state.client.addListener('message', (from, to, message) => {
+    const {client, messages} = this.state;
+
+    client.addListener('message', (from, to, body) => {
       this.setState({
         messages: [
-          ...this.state.messages,
+          ...messages,
           {
             from: from,
-            message: message,
+            body: body,
           },
         ]
       });
