@@ -3,18 +3,12 @@ import styles from './ChatPane.css';
 import irc from 'irc';
 
 export default class ChatPane extends Component {
-  constructor () {
-    super();
-    this.state = {
-      client: new irc.Client('chat.freenode.net', 'ack-chat', {
-        channels: ['#fun'],
-      }),
-      messages: [],
-    };
-  }
+  props: {
+    messages: object[],
+  };
 
   render() {
-    const messages = this.state.messages.map(message => (
+    const messages = this.props.messages.map(message => (
       <li>
         <div className={styles.user}>{message.from}</div>
         <div className={styles.message}>{message.body}</div>
@@ -30,21 +24,5 @@ export default class ChatPane extends Component {
         </div>
       </div>
     );
-  }
-
-  componentDidMount() {
-    const {client, messages} = this.state;
-
-    client.addListener('message', (from, to, body) => {
-      this.setState({
-        messages: [
-          ...messages,
-          {
-            from: from,
-            body: body,
-          },
-        ]
-      });
-    });
   }
 }
