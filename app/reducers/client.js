@@ -10,7 +10,10 @@ export default function client(state: Object = { client: null, channels: {} }, a
         channels: {
           ...state.channels,
           [action.to]: [
-            ...state.channels[action.to], {
+            // an array of messages
+            ...state.channels[action.to],
+            // append new message
+            {
               to: action.to,
               from: action.from,
               body: action.body,

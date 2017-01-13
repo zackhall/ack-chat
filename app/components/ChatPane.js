@@ -22,6 +22,9 @@ export default class ChatPane extends Component {
             {messages}
           </ul>
         </div>
+        <div className={styles.input}>
+          <textarea name="textbox" id="textbox" placeholder="Type here..."></textarea>
+        </div>
       </div>
     );
   }
